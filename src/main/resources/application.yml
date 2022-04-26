@@ -1,0 +1,17 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: config
+  profiles:
+    active: test
+  config:
+    import: optional:configserver:http://localhost:8000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "refresh"
+        
